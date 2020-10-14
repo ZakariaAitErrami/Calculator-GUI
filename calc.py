@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import ttk 
+from tkinter import messagebox
 form = tkinter.Tk()
 form.geometry('700x300')
 form.title('Calculator')
@@ -33,8 +34,9 @@ def calc(ope):
 		r= n1*n2
 	else:
 		if n2==0:
-			n2 = 1
-		r = n1 / n2
+			messagebox.showerror('Error','Division by Zero !!!!!!')
+		else:
+			r = n1 / n2
 	lblr['text']=('Result: %s %s %s = %s' %(n1,ope,n2,round(r,2))) #2 numbers after the comma
 
 btns = ttk.Style()
